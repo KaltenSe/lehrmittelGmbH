@@ -9,7 +9,7 @@ class bestellung extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'Id';
 
     protected $fillable = [
         'BenutzerIs',

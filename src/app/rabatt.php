@@ -9,7 +9,7 @@ class rabatt extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'Id';
 
     /**
      * @var array
