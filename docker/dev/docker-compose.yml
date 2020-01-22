@@ -1,0 +1,27 @@
+version: '3.5'
+services:
+  api:
+    container_name: lehrmittel-web
+    image: lehrmittel_web
+    build:
+      context: ./../..
+      dockerfile: docker/Dockerfile
+    volumes:
+    - ./../../src:/var/www/html
+    ports:
+    - 8040:80
+    links:
+      - mysql
+
+
+  mysql:
+    image: mysql:latest
+    container_name: lehrmittel-db
+    command: --init-file /opt/mysql/init-mysql.sql --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: geheim
+    ports:
+    - 3309:3306
+    volumes:
+      - ./../../docker-data/mysql:/var/lib/mysql:cached
+      - ./../../docker-data/mysql-init:/opt/mysql
