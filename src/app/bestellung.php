@@ -12,7 +12,7 @@ class bestellung extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'BenutzerIs',
+        'BenutzerId',
         'BestellungsZeitpunkt',
         'Status',
     ];
