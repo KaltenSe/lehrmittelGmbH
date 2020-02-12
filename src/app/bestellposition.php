@@ -10,7 +10,7 @@ class bestellposition extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'Id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'ArtikelID',

@@ -9,7 +9,7 @@ class artikel extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'Id';
+    protected $primaryKey = 'ArtikelId';
 
     /**
      * @var array

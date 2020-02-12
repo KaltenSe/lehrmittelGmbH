@@ -9,7 +9,7 @@ class benutzer extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'Id';
+    protected $primaryKey = 'BenutzerID';
 
     /**
      * @var array
