@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegisterMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -10,6 +11,7 @@ use App\User;
 use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -65,8 +67,10 @@ class AuthController extends Controller
         try{
 
             $user->save();
+            Mail::to($user->Email)->send(new RegisterMail($user));
 
         }catch(Exception $e) {
+            dd($e);
             return response()->json(['status' => Response::HTTP_BAD_REQUEST, 'data' => ['test'], "message" => 'Es existiert bereit ein Benutzer mit dieser Email/Loginname'], Response::HTTP_BAD_REQUEST);
         }
 
