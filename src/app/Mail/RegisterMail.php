@@ -34,7 +34,7 @@ class RegisterMail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_AUTH_FROM', 'default'))
+        return $this->from(env('MAIL_AUTH_FROM'))
             ->markdown('mails.auth.register', $this->user->toArray());
     }
 }
