@@ -26,7 +26,6 @@ Route::group([
     Route::post('sign-up', 'AuthController@signUp');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
-
 });
 
 Route::group([
@@ -38,5 +37,5 @@ Route::group([
 
     Route::get('/', 'ArticleController@index');
     Route::get('{articleId}', 'ArticleController@show');
-    Route::post('/', 'ArticleController@store');
+    #Route::post('/', 'ArticleController@store');
 });
