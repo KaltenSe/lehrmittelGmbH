@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nutzername') }}</label>
+                            <label for="userName" class="col-md-4 col-form-label text-md-right">{{ __('Nutzername') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="Loginname" value="{{ old('name') }}" required autocomplete="username" autofocus>
+                                <input id="userName" type="text" class="form-control @error('userName') is-invalid @enderror" name="LoginName" value="{{ old('userName') }}" required autocomplete="username" autofocus>
 
-                                @error('name')
+                                @error('userName')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -29,7 +29,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Passwort') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="Passwort" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
