@@ -11,9 +11,8 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
-    const CREATED_AT = 'Erstellt';
-    const UPDATED_AT = 'Aktualisiert';
-
+    #const CREATED_AT = 'Erstellt';
+    #const UPDATED_AT = 'Aktualisiert';
 
     protected $table = 'benutzer';
 
@@ -25,16 +24,17 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'Adresse',
         'Erstellt',
-        'Aktualisiert',
         'Gutschrift',
         'Loginname',
         'Nachname',
-        'PasswortHash',
+        'Passwort',
         'PLZ',
-        'Rolle',
+        'RollenId',
         'Vorname',
         'Email'
     ];
+
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for arrays.
