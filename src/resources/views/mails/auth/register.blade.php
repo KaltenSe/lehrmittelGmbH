@@ -7,6 +7,7 @@ Sie haben sich erfolgreich mit der E-Mail: {{$Email}}
 Viele Grüße
 <br>
 <br>
+<br/>
 <br>
 {{ config('app.name') }}- Team
 @endcomponent
