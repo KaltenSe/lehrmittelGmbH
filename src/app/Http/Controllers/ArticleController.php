@@ -25,7 +25,7 @@ class ArticleController extends Controller
         $this->articleService = $articleService;
     }
 
-    public function index(Request $request) : LengthAwarePaginator
+    public function index(Request $request)
     {
         try {
             return $this->articleService->getAllArticles($request);
