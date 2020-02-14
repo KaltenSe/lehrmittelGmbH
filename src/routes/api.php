@@ -28,3 +28,15 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::group([
+
+    'middleware' => ['api', 'CORS'],
+    'prefix' => 'articles'
+
+], function ($router) {
+
+    Route::get('/', 'ArticleController@index');
+    Route::get('{articleId}', 'ArticleController@show');
+    Route::post('/', 'ArticleController@store');
+});
