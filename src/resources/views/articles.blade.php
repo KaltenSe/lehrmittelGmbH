@@ -28,10 +28,10 @@
             </form>
             @foreach ($articles as $article)
                 <div class="card">
-                    <img src="..." class="card-img-left" alt="...">
+                    <img src="{{ $article->Bild }}" class="card-img-left" alt=":c">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $article->name }}</h5>
-                        <p class="card-text">{{ $article->description }}</p>
+                        <h5 class="card-title">{{ $article->Name }}</h5>
+                        <p class="card-text">{{ $article->Beschreibung }}</p>
                         <a href="{{ route('details') }}" class="btn btn-primary">Details</a>
                     </div>
                 </div>
