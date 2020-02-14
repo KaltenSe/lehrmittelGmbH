@@ -47,6 +47,16 @@ class ArticleService
         //$sort = $request->get('sort') ?? 'id';
         $data = $this->articleDataProvider->getAllArticles($request);
 
+        foreach ($data as $datum)
+        {
+            if (!empty($datum))
+            {
+                $bild = base64_decode($datum->getAttribute('Bild'));
+
+                $datum->setAttribute('Bild', $bild);
+            }
+        }
+
         return $data;
     }
 

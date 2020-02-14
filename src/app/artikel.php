@@ -9,19 +9,20 @@ class artikel extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'ArtikelId';
+    protected $primaryKey = 'Id';
 
     /**
      * @var array
      */
     protected $fillable = [
-        'Aktiv',
-        'Beschreibung',
-        'Bestand',
-        'Lieferzeit',
-        'Bild',
         'Name',
-        'Preis'
+        'Beschreibung',
+        'Lagerplatz',
+        'Preis',
+        'Lieferzeit',
+        'Bestand',
+        'Bild',
+        'StatusId'
     ];
 
     public $timestamps = false;
