@@ -32,10 +32,8 @@ class ArticleDataProvider
         return artikel::findOrFail($idArticle);
     }
 
-    public function getAllArticles(int $perPage,string $sort, string $, Request $request) : LengthAwarePaginator
+    public function getAllArticles() : LengthAwarePaginator
     {
-        return artikel::where('Aktiv', '=', true)
-            ->orderBy($sort,)
-            ->paginate($perPage);
+        return artikel::paginate();
     }
 }

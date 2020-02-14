@@ -25,13 +25,11 @@ class ArticleController extends Controller
         $this->articleService = $articleService;
     }
 
-    public function index(Request $request) : LengthAwarePaginator
+    public function index(Request $request)
     {
-        try {
-            return $this->articleService->getAllArticles($request);
-        } catch (\Throwable $throwable) {
-            dd($throwable);
-        }
+        $articles = $this->articleService->getAllArticles($request);
+        $data['articles'] = $articles;
+        return view('article.articles', $data);
     }
 
     /**

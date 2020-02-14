@@ -43,9 +43,7 @@ class ArticleService
 
     public function getAllArticles(Request $request) : LengthAwarePaginator
     {
-        $perPage = intval($request->get('perPage')) ?? 5;
-        $sort = $request->get('sort') ?? 'id';
-        return $this->articleDataProvider->getAllArticles($perPage,$id, $request);
+        return $this->articleDataProvider->getAllArticles();
     }
 
     public function getArticle(int $idArticle) : artikel
