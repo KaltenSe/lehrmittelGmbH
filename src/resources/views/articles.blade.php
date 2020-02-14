@@ -26,7 +26,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Refresh</button>
             </form>
-            @foreach ($articles as $article)
+            @foreach ($articles ?? '' as $article)
                 <div class="card">
                     <img src="{{ $article->Bild }}" class="card-img-left" alt=":c">
                     <div class="card-body">

@@ -43,9 +43,11 @@ class ArticleService
 
     public function getAllArticles(Request $request)
     {
-        $perPage = intval($request->get('perPage')) ?? 5;
-        $sort = $request->get('sort') ?? 'id';
-        return $this->articleDataProvider->getAllArticles($request);
+        //$perPage = intval($request->get('perPage')) ?? 5;
+        //$sort = $request->get('sort') ?? 'id';
+        $data = $this->articleDataProvider->getAllArticles($request);
+
+        return $data;
     }
 
     public function getArticle(int $idArticle) : artikel

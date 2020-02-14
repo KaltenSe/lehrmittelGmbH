@@ -28,11 +28,24 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         try {
-            return $this->articleService->getAllArticles($request);
+            $data = $this->articleService->getAllArticles($request);
+
+            return view('articles', $data);
         } catch (\Throwable $throwable) {
             dd($throwable);
         }
     }
+
+    public function getArticleById(int $idArticle)
+    {
+        try {
+            return $this->articleService->getArticle($idArticle);
+        } catch (\Throwable $throwable) {
+            dd($throwable);
+        }
+    }
+
+
 
     /**
      * get the article depending on the given article Id
