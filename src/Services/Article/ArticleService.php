@@ -41,11 +41,11 @@ class ArticleService
         $this->articleDataMutator = $articleDataMutator;
     }
 
-    public function getAllArticles(Request $request) : LengthAwarePaginator
+    public function getAllArticles(Request $request)
     {
         $perPage = intval($request->get('perPage')) ?? 5;
         $sort = $request->get('sort') ?? 'id';
-        return $this->articleDataProvider->getAllArticles($perPage,$id, $request);
+        return $this->articleDataProvider->getAllArticles($request);
     }
 
     public function getArticle(int $idArticle) : artikel

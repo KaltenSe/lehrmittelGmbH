@@ -35,7 +35,7 @@ Route::group([
 
 ], function ($router) {
 
-    Route::get('/', 'ArticleController@index');
-    Route::get('{articleId}', 'ArticleController@show');
+
+    #Route::get('{articleId}', 'ArticleController@show');
     #Route::post('/', 'ArticleController@store');
 });
