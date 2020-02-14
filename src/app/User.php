@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -15,6 +16,7 @@ class User extends Authenticatable implements JWTSubject
     #const UPDATED_AT = 'Aktualisiert';
 
     protected $table = 'benutzer';
+    protected $primaryKey = 'Id';
 
     /**
      * The attributes that are mass assignable.
@@ -42,7 +44,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        'PasswortHash', 'token',
+        'Passwort', 'token',
     ];
 
     /**
@@ -75,10 +77,16 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * get the password for the current user
+     * Get the password for the user.
+     *
+     * @return string
      */
+
+
+
     public function getAuthPassword()
     {
-        return $this->PasswortHash;
+        return $this->Passwort;
     }
+
 }

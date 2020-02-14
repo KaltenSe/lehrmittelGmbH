@@ -14,14 +14,15 @@ class CreateArticle extends Migration
     public function up()
     {
         Schema::create('artikel', function (Blueprint $table) {
-            $table->bigIncrements('ArtikelId');
-            $table->boolean('Aktiv');
-            $table->string('Beschreibung');
-            $table->bigInteger('Bestand');
-            $table->integer('Lieferzeit');
-            $table->string('Bild');
+            $table->bigIncrements('Id');
             $table->string('Name');
+            $table->string('Beschreibung');
+            $table->string('Lagerplatz')->nullable();
             $table->decimal('Preis');
+            $table->integer('Lieferzeit');
+            $table->bigInteger('Bestand');
+            $table->string('Bild');
+            $table->integer('StatusId');
         });
     }
 

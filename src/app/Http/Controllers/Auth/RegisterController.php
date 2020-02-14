@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'Adresse' => ['required', 'string'],
             'PLZ' => ['required', 'string'],
             'Email' => ['required', 'string', 'email', 'max:255'],
-            'Passwort' => ['required', 'string', 'min:8',],
+            'Passwort' => ['required', 'string', 'min:8'],
         ]);
     }
 

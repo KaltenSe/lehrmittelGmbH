@@ -20,7 +20,7 @@ class benutzer extends Model
         'Gutschrift',
         'LoginName',
         'Nachname',
-        'PasswortHash',
+        'Passwort',
         'PLZ',
         'Rolle',
         'Vorname',

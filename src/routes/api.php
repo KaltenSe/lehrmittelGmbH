@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+/*
 Route::group([
 
     'middleware' => ['api', 'CORS'],
@@ -38,4 +38,4 @@ Route::group([
     Route::get('/', 'ArticleController@index');
     Route::get('{articleId}', 'ArticleController@show');
     #Route::post('/', 'ArticleController@store');
-});
+});*/
