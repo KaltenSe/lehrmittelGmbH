@@ -49,7 +49,7 @@ class ArticleService
 
         foreach ($data as $datum)
         {
-            if (!empty($datum))
+            if ($datum->getAttribute('Bild') != null)
             {
                 $bild = base64_decode($datum->getAttribute('Bild'));
 
