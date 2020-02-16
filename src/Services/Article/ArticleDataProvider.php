@@ -34,6 +34,6 @@ class ArticleDataProvider
 
     public function getAllArticles() : LengthAwarePaginator
     {
-        return artikel::paginate();
+        return artikel::paginate(5);
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\artikel;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Services\Article\ArticleService;
@@ -43,16 +45,11 @@ class ArticleController extends Controller
      * @return   mixed
      *
      */
-    public function show(int $articleId)
+    public function show(int $articleId) : View
     {
-        try {
-            return $this->articleService->getArticle($articleId);
-        } catch (QueryException $exception) {
-            throw new Exception(
-                $exception->getMessage(),
-                $exception->getCode()
-            );
-        }
+        $article = $this->articleService->getArticle($articleId);
+        $data['article'] = $article;
+        return view('article.articleDescription', $data);
     }
 
     public function store(Request $request) {

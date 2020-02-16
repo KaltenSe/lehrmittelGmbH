@@ -8,6 +8,25 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+/**
+ * Class User
+ *
+ * @property int Id
+ * @property string Adresse
+ * @property string Erstellt
+ * @property float Gutschrift
+ * @property string Loginname
+ * @property string Nachname
+ * @property string Passwort
+ * @property string PLZ
+ * @property int RollenId
+ * @property string Vorname
+ * @property string Email
+ *
+ * @since   2020-02-14
+ * @package App
+ *
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
@@ -16,6 +35,7 @@ class User extends Authenticatable implements JWTSubject
     #const UPDATED_AT = 'Aktualisiert';
 
     protected $table = 'benutzer';
+
     protected $primaryKey = 'Id';
 
     /**
@@ -44,7 +64,8 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        'Passwort', 'token',
+        'Passwort',
+        'token',
     ];
 
     /**
@@ -81,8 +102,6 @@ class User extends Authenticatable implements JWTSubject
      *
      * @return string
      */
-
-
 
     public function getAuthPassword()
     {

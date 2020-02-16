@@ -20,5 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('articles','ArticleController@index');
-Route::get('articles/{articleId}','ArticleController@index');
+Route::get('Artikel','ArticleController@index')->name('articles');
+Route::get('Artikel/{articleId}','ArticleController@show')->name('article');
+Route::get('Warenkorb', 'CartController@show')->name('cart');
+Route::get('Bestellungen','OrderController@index')->name('orders');
+#Route::get('Bestellungen/{Bestellung}','Order@show')->name('orders');
